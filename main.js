@@ -34,4 +34,16 @@ function saveData(){
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
+
+function changeTheme(){
+    var htmlElement = document.querySelector('html');
+    var currentTheme = htmlElement.getAttribute('data-theme');
+
+    if (currentTheme === 'light') {
+      htmlElement.setAttribute('data-theme', 'dark');
+    } else {
+      htmlElement.setAttribute('data-theme', 'light');
+    }
+}
+
 showTask()

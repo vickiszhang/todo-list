@@ -1,3 +1,37 @@
+:root[data-theme="light"] {
+    --grad-1: #ffc5d3;
+    --grad-2: #6679cc;
+    --list-background: #fff;
+    --text-colour: #000000;
+
+    --theme-button: #fff;
+
+    --title: #002765;
+    --search-bar-grey: #edeef0;
+
+    --add-button: #f997b0;
+    --add-button-text: #fff;
+    --greyed: #555;
+    --list-text: #4e085f;
+}
+
+:root[data-theme="dark"] {
+    --grad-1: #561f2b;
+    --grad-2: #001059;
+    --list-background: #07051f;
+    --text-colour: #cacaca;
+
+    --theme-button: #07051f;
+
+    --title: #6d96d8;
+    --search-bar-grey: #212737;
+
+    --add-button: #a65368;
+    --add-button-text: #dedede;
+    --greyed: #555;
+    --list-text: #c185d0;
+}
+
 *{
     margin:0;
     padding:0;
@@ -7,19 +41,19 @@
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ff3b6c, #4e085f);
+    background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
     padding: 10px
 }
 .todo-app{
     width:100%;
     max-width: 540px;
-    background: #fff;
+    background: var(--list-background);
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
     border-radius: 10px;
 }
 .todo-app h2{
-    color: #002765;
+    color: var(--title);
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -34,7 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #edeef0;
+    background: var(--search-bar-grey);
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
@@ -46,14 +80,27 @@ input{
     outline: none;
     background: transparent;
     padding: 10px;
+    color: var(--text-colour);
 }
 
-button{
+.theme-mode {
+    border: none;
+    outline: none;
+    padding: 30px 30px;
+    background: var(--theme-button);
+    cursor: pointer;
+    border-radius: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.add-button {
     border: none;
     outline: none;
     padding: 16px 50px;
-    background: #ff3b6c;
-    color: #fff;
+    background: var(--add-button);
+    color: var(--add-button-text);
     cursor: pointer;
     border-radius: 40px;
 }
@@ -65,7 +112,7 @@ ul li{
     user-select: none;
     cursor: pointer;
     position: relative;
-    color:#4e085f;
+    color: var(--list-text);
 }
 
 ul li::before{
@@ -83,7 +130,7 @@ ul li::before{
 }
 
 ul li.checked{
-    color: #555;
+    color: var(--greyed);
     text-decoration: line-through;
 }
 
@@ -98,13 +145,13 @@ ul li span{
     width: 40px;
     height: 40px;
     font-size: 22px;
-    color: #555;
+    color: var(--greyed);
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
 }
 
 ul li span:hover{
-    background: #edeef0;
+    background: var(--search-bar-grey);
 }
 
